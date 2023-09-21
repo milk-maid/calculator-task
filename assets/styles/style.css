@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -24,7 +26,7 @@ img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/africa111.png);
     background-position: center;
     background-size: cover;
-}  
+}
 
 /* 
 .wrapper {
@@ -49,16 +51,39 @@ img {
     box-shadow: 0 0 40px 20px rgba(195, 76, 110, .76);
 }
 
-.calc-grid > button {
+/* Base button style */
+.calc-grid>button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid #ff105f;
+    border: 3px solid #5d3191;
+    border-radius: 20%;
     outline: none;
     background: rgba(255, 255, 255, 0.25);
+    transition: all 0.2s ease;
 }
 
-.calc-grid >button:hover {
+/* Hover effect */
+.calc-grid>button:hover {
     background: rgba(255, 255, 255, 0.52);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+/* Active (click) effect */
+.calc-grid>button:active {
+    transform: scale(0.8);
+    /* Scales the button down slightly when clicked */
+    background: rgba(255, 255, 255, 0.8);
+    /* Change the background color */
+}
+
+/* Focus effect (when focused with tab) */
+.calc-grid>button:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* Add a shadow when focused */
 }
 
 .span-two {
@@ -79,7 +104,7 @@ img {
 
 .output .prev-operand {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
 }
 
 .output .current-operand {
